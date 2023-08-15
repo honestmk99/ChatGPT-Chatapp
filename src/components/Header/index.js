@@ -1,5 +1,6 @@
 import React from "react";
-import logo from "../../public/image/logo.svg";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/image/logo.svg";
 
 export default function Header() {
   return (
@@ -7,7 +8,11 @@ export default function Header() {
       <div className="logo">
         <img src={logo} alt="Logo" />
       </div>
-      <div className="tabs"></div>
+
+      <div className="menu">
+        <Link to="/">Home</Link>
+        <Link to="/plan">Plan</Link>
+      </div>
       <div className=""></div>
     </div>
   );
