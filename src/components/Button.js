@@ -7,10 +7,12 @@ export default function Button({
   bordercolor,
   borderradius,
   borderwidth,
+  paddingx,
+  paddingy,
 }) {
   return (
     <button
-      className={`px-[40px] py-[10px] ${borderwidth} ${borderradius} ${bordercolor} ${textcolor} ${color}`}
+      className={`${paddingx} ${paddingy} ${borderwidth} ${borderradius} ${bordercolor} ${textcolor} ${color}`}
     >
       {title}
     </button>

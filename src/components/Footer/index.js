@@ -30,7 +30,7 @@ const FooterData = [
 export default function Footer() {
   return (
     <div>
-      <div className="col-span-3 p-[50px] flex">
+      <div className="col-span-3 px-[50px] pt-[20px] pb-[10px] flex">
         <div className="">
           <div className="logo">
             <img className="w-[292px]" src={logo} alt="Logo" />
