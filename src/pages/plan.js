@@ -116,6 +116,12 @@ export default function Plan() {
     }
   };
 
+  const handleInputKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSendMessage();
+    }
+  };
+
   return (
     <div className="intro text-primary">
       <div className="bg-[#253C6E] flex flex-col pt-[200px]">
@@ -125,6 +131,7 @@ export default function Plan() {
             className="rounded-[5px] w-full"
             value={inputText}
             onChange={handleInputChange}
+            onKeyDown={handleInputKeyDown}
             type="text"
           ></input>
           <button
