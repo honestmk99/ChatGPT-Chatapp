@@ -100,7 +100,7 @@ export default function Plan() {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.API_KEY}`,
+            Authorization: `Bearer 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`,
           },
         }
       );
