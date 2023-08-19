@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../components/Button";
 import bg2 from "../assets/image/bg2.svg";
-import avatar from "../assets/image/avatar.png";
+import myavatar from "../assets/image/user_avatar.png";
 import zzz from "../assets/image/ZZZ.png";
 
 export default function Home() {
@@ -46,11 +46,11 @@ export default function Home() {
           <div className="rounded-[15px] p-[16px] bg-[rgba(255,255,255,0.75)] backdrop-blur-[6px] ml-[650px] mt-[350px] flex-col col-span-2 absolute left-0 top-0">
             <div className="flex ">
               <div className="">
-                <img src={avatar} alt="avatar" />
+                <img src={myavatar} alt="avatar" className="rounded-[50%]" />
               </div>
-              <div className="pl-[11px]">
-                <h5 className="font-bold">Learn basic UI/UX Design</h5>
-                <h5 className="text-[#2b2b2bb3]">Today at 12 PM</h5>
+              <div className="pl-[11px] pb-2">
+                <h5 className="font-bold">Frontend Improvement</h5>
+                <h5 className="text-[#2b2b2bb3]">August, 2023</h5>
               </div>
             </div>
             <div className="flex justify-center">
