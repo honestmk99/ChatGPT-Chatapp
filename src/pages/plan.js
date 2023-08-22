@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import avatar1 from "../assets/image/user_avatar.png";
 import avatar2 from "../assets/image/chatGPT_avatar.png";
 import axios from "axios";
@@ -20,7 +20,7 @@ export default function Plan() {
 
     if (messages[messages.length - 1].role === "user") {
       const user = document.createElement("div");
-      user.className = "grid grid-cols-[1fr_auto] ml-[150px] pb-[10px] gap-2";
+      user.className = "grid grid-cols-[1fr_auto] ml-[1050px] pb-[10px] gap-2";
 
       const userText = document.createElement("div");
       userText.className = "flex justify-end";
@@ -37,7 +37,7 @@ export default function Plan() {
       userText_content.appendChild(userText_h4);
 
       const userAvatar = document.createElement("div");
-      userAvatar.className = "w-[50px] self-end";
+      userAvatar.className = "w-[50px] self-end mr-3";
 
       const avatar_img = document.createElement("img");
       avatar_img.className = "rounded-[50%]";
@@ -52,10 +52,10 @@ export default function Plan() {
     } else if (messages[messages.length - 1].role === "assistant") {
       const aiReply = document.createElement("div");
       aiReply.className =
-        "grid grid-cols-[auto_1fr] pb-[10px] mr-[150px] gap-2";
+        "grid grid-cols-[auto_1fr] pb-[10px] mr-[1050px] gap-2";
 
       const aiReply_content = document.createElement("div");
-      aiReply_content.className = "w-[50px] self-end ml-[10px]";
+      aiReply_content.className = "w-[50px] self-end ml-3";
 
       const aiAvatar = document.createElement("img");
       aiAvatar.className = "rounded-[50%]";
@@ -104,7 +104,7 @@ export default function Plan() {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer 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`,
           },
         }
       );
@@ -122,26 +122,81 @@ export default function Plan() {
     }
   };
 
+  // to bottom button
+  // const [isVisible, setIsVisible] = useState(false);
+
+  // const scrollToTop = () => {
+  //   console.log("hihih");
+  //   window.scrollTo({
+  //     bottom: 0,
+  //     behavior: "smooth",
+  //   });
+  //   console.log("now------->");
+  // };
+
+  // useEffect(() => {
+  //   // Button is displayed after scrolling for 500 pixels
+  //   const toggleVisibility = () => {
+  //     if (window.scrollY > 400) {
+  //       console.log("overflow 500");
+  //       setIsVisible(true);
+  //     } else {
+  //       setIsVisible(false);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", toggleVisibility);
+
+  //   return () => window.removeEventListener("scroll", toggleVisibility);
+  // }, []);
+
   return (
-    <div className="intro text-primary">
-      <div className="bg-[#253C6E] flex flex-col pt-[200px]">
-        <div id="pad"></div>
-        <div className="flex gap-2 p-[5px]">
+    <div className="intro text-primary grid grid-row-[1fr, auto] min-h-screen bg-[#253C6E]">
+      <div className="flex flex-col self-end">
+        <div id="pad" className="pb-[50px]"></div>
+        <div className="flex gap-2 p-4 fixed bottom-0 left-0 px-[70px] w-full ">
           <input
-            className="rounded-[5px] w-full"
+            className="rounded-[5px] w-full pl-2"
             value={inputText}
             onChange={handleInputChange}
             onKeyDown={handleInputKeyDown}
             type="text"
           ></input>
           <button
-            className="text-[#fff] border-[#fff] border-[1px] rounded-[8px] px-[25px] py-[5px]"
+            className="text-[#fff] border-[#fff] border-[1px] rounded-[8px] px-[25px] py-[5px] cursor-pointer"
             onClick={handleSendMessage}
           >
             Send
           </button>
         </div>
       </div>
+
+      {/* {isVisible && ( */}
+      {/* <button
+        // onClick={scrollToTop}
+        type="button"
+        data-te-ripple-init
+        data-te-ripple-color="light"
+        className="fixed bottom-5 right-5 inline-block rounded-full bg-danger p-2 uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)]"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          strokeWidth="2.5"
+          stroke="currentColor"
+          className="h-4 w-4"
+        >
+          <path
+            fillRule="evenodd"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button> */}
+      {/* )} */}
     </div>
   );
 }
