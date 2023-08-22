@@ -104,7 +104,7 @@ export default function Plan() {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer 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`,
           },
         }
       );
