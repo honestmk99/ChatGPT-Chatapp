@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import avatar1 from "../assets/image/user_avatar.png";
 import avatar2 from "../assets/image/chatGPT_avatar.png";
 import axios from "axios";
 
-export default function Plan() {
+export default function Chatgpt() {
   const [messages, setMessages] = useState([
     { role: "system", content: "ChatGPT joined the conversation." },
   ]);
@@ -104,7 +104,7 @@ export default function Plan() {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer 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`,
           },
         }
       );
@@ -163,7 +163,7 @@ export default function Plan() {
             type="text"
           ></input>
           <button
-            className="text-[#fff] border-[#fff] border-[1px] rounded-[8px] px-[25px] py-[5px] cursor-pointer"
+            className="hover:bg-blackblue text-[#fff] border-[#fff] border-[1px] rounded-[8px] px-[25px] py-[5px] cursor-pointer"
             onClick={handleSendMessage}
           >
             Send

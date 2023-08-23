@@ -7,7 +7,7 @@ import zzz from "../assets/image/ZZZ.png";
 export default function Home() {
   return (
     <div classname="intro text-primary bg-[url:('..//dfdfdfd')] ">
-      <div className="bg-[#253C6E] h-full flex col-span-2 relative">
+      <div className="bg-blue h-full flex col-span-2 relative">
         <img src={zzz} alt="" className="absolute right-10 top-20" />
         <div className="pl-[90px]">
           <div className="pt-[200px] pb-[152px]">
@@ -18,13 +18,14 @@ export default function Home() {
           <div className="flex gap-2">
             <Button
               title={"Join Classes"}
-              color={"bg-[white]"}
-              textcolor={"text-[#253C6E]"}
-              bordercolor={"border-[#253C6E]"}
+              color={"bg-[#fff]"}
+              textcolor={"text-blue"}
+              bordercolor={"border-blue"}
               borderwidth={"border-[1px]"}
               borderradius={"rounded-[8px]"}
-              paddingx={"px-[20px]"}
-              paddingy={"py-[10px]"}
+              paddingx={"px-[30px]"}
+              paddingy={"py-[20px]"}
+              buttonhover={"hover:bg-gray"}
             />
             <Button
               title={"Join Mentorship"}
@@ -33,8 +34,9 @@ export default function Home() {
               bordercolor={"border-white"}
               borderwidth={"border-[1px]"}
               borderradius={"rounded-[8px]"}
-              paddingx={"px-[20px]"}
-              paddingy={"py-[10px]"}
+              paddingx={"px-[30px]"}
+              paddingy={"py-[20px]"}
+              buttonhover={"hover:bg-blackblue"}
             />
           </div>
         </div>
@@ -56,11 +58,12 @@ export default function Home() {
             <div className="flex justify-center">
               <Button
                 title={"Join Now"}
-                color={"bg-[#16629C]"}
+                color={"bg-rightblue"}
                 textcolor={"text-[#fff]"}
                 borderradius={"rounded-[7px]"}
                 paddingx={"px-[10px]"}
                 paddingy={"py-[5px]"}
+                buttonhover={"hover:bg-blue"}
               />
             </div>
           </div>

@@ -9,8 +9,8 @@ const MenuData = [
     path: "/",
   },
   {
-    title: "Plan",
-    path: "/plan",
+    title: "ChatGPT",
+    path: "/chatgpt",
   },
   {
     title: "Courses",
@@ -49,24 +49,26 @@ export default function Header() {
         <div className="">
           <Button
             title={"Login"}
-            textcolor={"text-[#253C6E]"}
-            bordercolor={"border-[#253C6E]"}
+            textcolor={"text-blue"}
+            bordercolor={"border-blue"}
             borderwidth={"border-[1px]"}
             borderradius={"rounded-[100px]"}
             paddingx={"px-[40px]"}
             paddingy={"py-[5px]"}
+            buttonhover={"hover:bg-gray"}
           />
         </div>
         <div>
           <Button
             title={"Sign Up"}
-            color={"bg-[#253C6E]"}
+            color={"bg-blue"}
             textcolor={"text-[#fff]"}
-            bordercolor={"border-[#253C6E]"}
+            bordercolor={"border-blue"}
             borderwidth={"border-[1px]"}
             borderradius={"rounded-[100px]"}
             paddingx={"px-[40px]"}
             paddingy={"py-[5px]"}
+            buttonhover={"hover:bg-blackblue"}
           />
         </div>
       </div>

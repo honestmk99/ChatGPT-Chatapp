@@ -1,3 +1,4 @@
+import { hover } from "@testing-library/user-event/dist/hover";
 import React from "react";
 
 export default function Button({
@@ -9,10 +10,11 @@ export default function Button({
   borderwidth,
   paddingx,
   paddingy,
+  buttonhover,
 }) {
   return (
     <button
-      className={`${paddingx} ${paddingy} ${borderwidth} ${borderradius} ${bordercolor} ${textcolor} ${color}`}
+      className={`${paddingx} ${paddingy} ${borderwidth} ${borderradius} ${bordercolor} ${textcolor} ${color} ${buttonhover}`}
     >
       {title}
     </button>
