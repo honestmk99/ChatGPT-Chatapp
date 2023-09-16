@@ -24,8 +24,7 @@ export default function Chatgpt() {
 
       if (messages[messages.length - 1].role === "user") {
         const user = document.createElement("div");
-        user.className =
-          "grid grid-cols-[1fr_auto] ml-[1050px] pb-[10px] gap-2";
+        user.className = "grid grid-cols-[1fr_auto] ml-[150px] pb-[10px] gap-2";
 
         const userText = document.createElement("div");
         userText.className = "flex justify-end";
@@ -57,7 +56,7 @@ export default function Chatgpt() {
       } else if (messages[messages.length - 1].role === "assistant") {
         const aiReply = document.createElement("div");
         aiReply.className =
-          "grid grid-cols-[auto_1fr] pb-[10px] mr-[1050px] gap-2";
+          "grid grid-cols-[auto_1fr] pb-[10px] mr-[150px] gap-2";
 
         const aiReply_content = document.createElement("div");
         aiReply_content.className = "w-[50px] self-end ml-3";
@@ -109,7 +108,7 @@ export default function Chatgpt() {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer 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`,
           },
         }
       );
@@ -128,32 +127,38 @@ export default function Chatgpt() {
   };
 
   // to bottom button
-  // const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-  // const scrollToTop = () => {
-  //   console.log("hihih");
-  //   window.scrollTo({
-  //     bottom: 0,
-  //     behavior: "smooth",
-  //   });
-  //   console.log("now------->");
-  // };
+  const scrollToTop = () => {
+    console.log("hihih");
+    window.scrollTo({
+      bottom: 0,
+      behavior: "smooth",
+    });
+    console.log("now------->");
+  };
 
-  // useEffect(() => {
-  //   // Button is displayed after scrolling for 500 pixels
-  //   const toggleVisibility = () => {
-  //     if (window.scrollY > 400) {
-  //       console.log("overflow 500");
-  //       setIsVisible(true);
-  //     } else {
-  //       setIsVisible(false);
-  //     }
-  //   };
+  useEffect(() => {
+    // Button is displayed after scrolling for 500 pixels
+    const toggleVisibility = () => {
+      // if (window.scrollY > 400) {
+      //   console.log("overflow 500");
+      //   setIsVisible(true);
+      // } else {
+      //   setIsVisible(false);
+      // }
+      if (window.screen) {
+        console.log("overflow 500");
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
 
-  //   window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
 
-  //   return () => window.removeEventListener("scroll", toggleVisibility);
-  // }, []);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
 
   return (
     <div className="intro text-primary grid grid-row-[1fr, auto] min-h-screen bg-[#253C6E]">

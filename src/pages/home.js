@@ -3,10 +3,12 @@ import Button from "../components/Button";
 import bg2 from "../assets/image/bg2.svg";
 import myavatar from "../assets/image/user_avatar.png";
 import zzz from "../assets/image/ZZZ.png";
+import aboutimage from "../assets/image/aboutimage.png";
+import arrow from "../assets/image/arrow.png";
 
 export default function Home() {
   return (
-    <div classname="intro text-primary bg-[url:('..//dfdfdfd')] ">
+    <div classname="intro text-primary] ">
       <div className="bg-blue h-full flex col-span-2 relative">
         <img src={zzz} alt="" className="absolute right-10 top-20" />
         <div className="pl-[90px]">
@@ -65,6 +67,32 @@ export default function Home() {
                 paddingy={"py-[5px]"}
                 buttonhover={"hover:bg-blue"}
               />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex pt-[113px]">
+        <div className="grid px-[144px] grid-cols-2">
+          <div className="pr-[20px] mr-[40px]">
+            <img src={aboutimage} alt="aboutimage" className="" />
+          </div>
+          <div className="">
+            <h4 className="text-[42px] font-bold leading-[45px] pb-6">
+              Learn with various materials and various fields in a modern way
+            </h4>
+            <h5 className="text-[14px] pb-[30px]">
+              Elit quam cras sollicitudin ridiculus commodo a eget. Quisque
+              magna tempus urna lectus. Nec tortor, vehicula nunc, duis orci.
+              Nunc urna, vitae sit sapien diam diam cursus. Cras tempus
+              venenatis consequat, in amet urna, tempor. Augue elit, ultrices
+              sapien tellus. Tellus sapien, risus mauris pretium. At tortor,
+              blandit lorem sit ac, malesuada.
+            </h5>
+            <div className="flex flex-row">
+              <a href="" className="text-blue text-[16px]" id="#home">
+                About us
+                <img src={arrow} className="" />
+              </a>
             </div>
           </div>
         </div>

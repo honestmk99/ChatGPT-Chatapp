@@ -10,21 +10,44 @@ import AboutUs from "./pages/Aboutus";
 import ContactUs from "./pages/Contactus";
 import Footer from "./components/Footer";
 
+const routes = [
+  { path: "/", component: Home, showHeaderFooter: true },
+  { path: "/chatgpt", component: Chatgpt, showHeaderFooter: false },
+  { path: "/courses", component: Courses, showHeaderFooter: true },
+  { path: "/faq", component: Faq, showHeaderFooter: true },
+  { path: "/about", component: AboutUs, showHeaderFooter: true },
+  { path: "/contact", component: ContactUs, showHeaderFooter: true },
+];
+
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/chatgpt" element={<Chatgpt />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<ContactUs />} />
-        </Routes>
-        {/* <Footer /> */}
-      </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={<PageWithHeaderFooter route={route} />}
+          />
+        ))}
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+function PageWithHeaderFooter({ route }) {
+  const { component: Component, showHeaderFooter } = route;
+
+  return (
+    <div>
+      {showHeaderFooter && (
+        <>
+          <Header />
+          <Component />
+          <Footer />
+        </>
+      )}
+      {!showHeaderFooter && <Component />}
     </div>
   );
 }

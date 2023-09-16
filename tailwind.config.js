@@ -6,6 +6,7 @@ module.exports = {
       spacing: {
         29: "29px",
         30: "30px",
+        100: "100px",
       },
       fontFamily: {
         primary: "Plus Jakarta Sans",
