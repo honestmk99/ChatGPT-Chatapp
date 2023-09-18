@@ -108,7 +108,7 @@ export default function Chatgpt() {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer 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`,
           },
         }
       );

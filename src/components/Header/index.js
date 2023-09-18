@@ -1,4 +1,4 @@
-import React, { useState, useNavigate } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/image/logo.svg";
 import Button from "../Button";
@@ -31,7 +31,7 @@ const MenuData = [
 ];
 
 export default function Header() {
-  const [selectedOption, setSelectedOption] = useNavigate(this.value);
+  const [selectedOption, setSelectedOption] = useState("");
 
   return (
     <div

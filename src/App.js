@@ -11,12 +11,12 @@ import ContactUs from "./pages/Contactus";
 import Footer from "./components/Footer";
 
 const routes = [
-  { path: "/", component: Home, showHeaderFooter: true },
-  { path: "/chatgpt", component: Chatgpt, showHeaderFooter: false },
-  { path: "/courses", component: Courses, showHeaderFooter: true },
-  { path: "/faq", component: Faq, showHeaderFooter: true },
-  { path: "/about", component: AboutUs, showHeaderFooter: true },
-  { path: "/contact", component: ContactUs, showHeaderFooter: true },
+  { path: "/", component: <Home />, showHeaderFooter: true },
+  { path: "/chatgpt", component: <Chatgpt />, showHeaderFooter: false },
+  { path: "/courses", component: <Courses />, showHeaderFooter: true },
+  { path: "/faq", component: <Faq />, showHeaderFooter: true },
+  { path: "/about", component: <AboutUs />, showHeaderFooter: true },
+  { path: "/contact", component: <ContactUs />, showHeaderFooter: true },
 ];
 
 function App() {
@@ -36,18 +36,18 @@ function App() {
 }
 
 function PageWithHeaderFooter({ route }) {
-  const { component: Component, showHeaderFooter } = route;
+  const { component, showHeaderFooter } = route;
 
   return (
     <div>
       {showHeaderFooter && (
         <>
           <Header />
-          <Component />
+          {component ? component : <></>}
           <Footer />
         </>
       )}
-      {!showHeaderFooter && <Component />}
+      {!showHeaderFooter && component}
     </div>
   );
 }
